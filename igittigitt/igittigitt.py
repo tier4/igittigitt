@@ -251,7 +251,7 @@ class IgnoreParser(object):
 
         path_file_object = pathlib.Path(file_path).resolve()
         is_file = path_file_object.is_file()
-        str_file_path = str(path_file_object)
+        str_file_path = str(file_path)
 
         match = self._match_rules(str_file_path, is_file)
 
