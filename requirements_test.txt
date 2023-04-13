@@ -3,7 +3,6 @@
 ## "setup.py install test" or "pip install <package> --install-option test"
 black ; platform_python_implementation != "PyPy"
 black==19.3b0 ; platform_python_implementation == "PyPy"
-codecov
 coloredlogs
 coverage
 flake8
