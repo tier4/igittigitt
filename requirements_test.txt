@@ -2,7 +2,7 @@
 ## following Requirements will be installed temporarily for
 ## "setup.py install test" or "pip install <package> --install-option test"
 black ; platform_python_implementation != "PyPy"
-black==19.3b0 ; platform_python_implementation == "PyPy"
+black==24.3.0 ; platform_python_implementation == "PyPy"
 coloredlogs
 coverage
 flake8
