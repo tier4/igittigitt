@@ -3,10 +3,12 @@
 import codecs
 import os
 import pathlib
-from typing import Any, List, Dict
+from typing import Any, Dict, List
 
-from setuptools import setup  # type: ignore
-from setuptools import find_packages
+from setuptools import (
+    find_packages,
+    setup,  # type: ignore
+)
 
 
 def is_travis_deploy() -> bool:
@@ -110,7 +112,8 @@ setup_kwargs["entry_points"] = {
 # minimally needs to run tests - no project requirements here
 setup_kwargs["tests_require"] = tests_require
 # specify what a project minimally needs to run correctly
-setup_kwargs["install_requires"] = install_requires
+# setup_kwargs["install_requires"] = install_requires
+setup_kwargs["dependencies"] = install_requires
 # minimally needs to run the setup script, dependencies needs also to put here for "setup.py install test"
 # dependencies must not be put here for pip install
 setup_kwargs["setup_requires"] = setup_requires
@@ -119,4 +122,6 @@ setup_kwargs["zip_safe"] = False
 
 
 if __name__ == "__main__":
-    setup(**setup_kwargs)
+    setup(
+        **setup_kwargs, install_requires=["attrs", "click", "cli_exit_tools", "wcmatch"]
+    )
